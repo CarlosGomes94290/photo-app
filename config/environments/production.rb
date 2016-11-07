@@ -50,19 +50,12 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
-  config.action_mailer.default_url_options = { :host => 'mad-photo-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'mad-photo-app.herokuapp.com', protocol => 'https' }
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-   :address              => "smtp.gmail.com",
-   :port                 => 587,
-   :user_name            => ENV['gmail_username'],
-   :password             => ENV['gmail_password'],
-   :authentication       => "plain",
-  :enable_starttls_auto => true
-  }
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
